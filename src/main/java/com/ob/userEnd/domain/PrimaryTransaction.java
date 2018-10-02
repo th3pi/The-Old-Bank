@@ -1,9 +1,15 @@
 package com.ob.userEnd.domain;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity
+@Table(name = "pt")
 public class PrimaryTransaction {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long transactionId;
     private Date date;
     private String description;
@@ -11,6 +17,9 @@ public class PrimaryTransaction {
     private String status;
     private double amount;
     private BigDecimal availableBalance;
+
+    @ManyToOne
+    @JoinColumn(name = "primary_account_id")
     private PrimaryAccount primaryAccount;
 
     public PrimaryTransaction() {
