@@ -2,7 +2,6 @@ package com.ob.userEnd.domain;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Date;
 
 @Entity
 @Table(name = "pt")
@@ -11,7 +10,7 @@ public class PrimaryTransaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long transactionId;
-    private Date date;
+    private String transactionDate;
     private String description;
     private String type;
     private String status;
@@ -25,8 +24,8 @@ public class PrimaryTransaction {
     public PrimaryTransaction() {
     }
 
-    public PrimaryTransaction(Date date, String description, String type, String status, double amount, BigDecimal availableBalance, PrimaryAccount primaryAccount) {
-        this.date = date;
+    public PrimaryTransaction(String transactionDate, String description, String type, String status, double amount, BigDecimal availableBalance, PrimaryAccount primaryAccount) {
+        this.transactionDate = transactionDate;
         this.description = description;
         this.type = type;
         this.status = status;
@@ -43,12 +42,12 @@ public class PrimaryTransaction {
         this.transactionId = transactionId;
     }
 
-    public Date getDate() {
-        return date;
+    public String getTransactionDate() {
+        return transactionDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setTransactionDate(String transactionDate) {
+        this.transactionDate = transactionDate;
     }
 
     public String getDescription() {

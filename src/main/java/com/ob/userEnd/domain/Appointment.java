@@ -9,7 +9,7 @@ public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long appointmentId;
-    private Date date;
+    private String transactionDate;
     private String location;
     private String description;
     private int confirmed;
@@ -27,12 +27,12 @@ public class Appointment {
         this.appointmentId = appointmentId;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return transactionDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(String date) {
+        this.transactionDate = date;
     }
 
     public String getLocation() {
@@ -71,7 +71,7 @@ public class Appointment {
     public String toString() {
         return "Appointment{" +
                 "appointmentId=" + appointmentId +
-                ", date=" + date +
+                ", date=" + transactionDate +
                 ", location='" + location + '\'' +
                 ", description='" + description + '\'' +
                 ", confirmed=" + confirmed +
