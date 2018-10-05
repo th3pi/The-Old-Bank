@@ -22,6 +22,7 @@ public class SavingsTransaction {
     private SavingsAccount savingsAccount;
 
     public SavingsTransaction() {
+
     }
 
     public SavingsTransaction(String transactionDate, String description, String type, String status, double amount, BigDecimal availableBalance, SavingsAccount savingsAccount) {
